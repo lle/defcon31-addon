@@ -174,8 +174,8 @@ int main(void)
 			 anim_swipeAll_run();
 			 break;
 		 default:
-			 screen_fill(); delay(10);
-			 screen_clear(); delay(10);
+			 screen_fill(); HAL_Delay(10);
+			 screen_clear(); HAL_Delay(10);
 			 break;
 
 	}
