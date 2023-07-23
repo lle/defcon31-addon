@@ -17,6 +17,7 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include <anim_swipe.h>
 #include "main.h"
 #include "adc.h"
 #include "tim.h"
@@ -29,7 +30,9 @@
 
 #include "screenBuffer.h"
 #include "ascii_letter.h"
-#include "game_snake.h"
+#include "anim_random.h"
+#include "anim_swipe.h"
+#include "anim_name.h"
 
 
 /* USER CODE END Includes */
@@ -41,6 +44,10 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
+#define MAX_ANIM_ID 7
+uint8_t currentAnimation = 0;
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -115,8 +122,6 @@ int main(void)
 
   //start timer for screen refresh
   HAL_TIM_Base_Start_IT(&htim16);
-  game_startNewGame();
-
 
 
   /* USER CODE END 2 */
@@ -130,19 +135,52 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
 
-	  snake_runGame();
+	if( HAL_GPIO_ReadPin(BTB_GPIO_Port, BTB_Pin) == GPIO_PIN_RESET )
+	{
+		currentAnimation++;
+		if(currentAnimation == MAX_ANIM_ID)
+			currentAnimation = 0;
 
-	  if(HAL_GPIO_ReadPin(BTN2_GPIO_Port, BTN2_Pin) == GPIO_PIN_RESET)
-		  snake_set_new_direction(GOING_UP);
+		//HAL_Delay(100);
+		while(HAL_GPIO_ReadPin(BTB_GPIO_Port, BTB_Pin) == GPIO_PIN_RESET)
+		{
+			screen_show_letter(ASCII_ONE + currentAnimation);
+			HAL_Delay(100);
+		}
+	}
 
-	  else if(HAL_GPIO_ReadPin(BTN1_GPIO_Port, BTN1_Pin) == GPIO_PIN_RESET)
-		  snake_set_new_direction(GOING_DOWN);
 
-	  else if(HAL_GPIO_ReadPin(BTN3_GPIO_Port, BTN3_Pin) == GPIO_PIN_RESET)
-		  snake_set_new_direction(GOING_LEFT);
+	switch(currentAnimation)
+	{
+		 case 0:
+			 anim_random_run();
+			 break;
+		 case 1:
+			 anim_name_run();
+			 break;
+		 case 2:
+			 anim_horizontal_run();
+			 break;
+		 case 3:
+			 anim_vertical_run();
+			 break;
+		 case 4:
+			 anim_diagonal_run();
+			 break;
+		 case 5:
+			 anim_nameKitty_run();
+			 break;
+		 case 6:
+			 anim_swipeAll_run();
+			 break;
+		 default:
+			 screen_fill(); delay(10);
+			 screen_clear(); delay(10);
+			 break;
 
-	  else if(HAL_GPIO_ReadPin(BTN4_GPIO_Port, BTN4_Pin) == GPIO_PIN_RESET)
-		  snake_set_new_direction(GOING_RIGHT);
+	}
+
+
   }
   /* USER CODE END 3 */
 }

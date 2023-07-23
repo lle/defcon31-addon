@@ -1,0 +1,4 @@
+../Src/anim_swipe.c:10:6:anim_vertical_run	3
+../Src/anim_swipe.c:26:6:anim_horizontal_run	3
+../Src/anim_swipe.c:43:6:anim_diagonal_run	4
+../Src/anim_swipe.c:67:6:anim_swipeAll_run	5

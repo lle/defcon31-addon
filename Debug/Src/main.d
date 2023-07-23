@@ -1,4 +1,4 @@
-Src/main.o: ../Src/main.c ../Inc/main.h \
+Src/main.o: ../Src/main.c ../Inc/anim_swipe.h ../Inc/main.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h \
  ../Inc/stm32f0xx_hal_conf.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h \
@@ -31,7 +31,9 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h \
  ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h ../Inc/adc.h \
  ../Inc/main.h ../Inc/tim.h ../Inc/usart.h ../Inc/gpio.h \
- ../Inc/screenBuffer.h ../Inc/ascii_letter.h ../Inc/game_snake.h
+ ../Inc/screenBuffer.h ../Inc/ascii_letter.h ../Inc/anim_random.h \
+ ../Inc/anim_name.h
+../Inc/anim_swipe.h:
 ../Inc/main.h:
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h:
 ../Inc/stm32f0xx_hal_conf.h:
@@ -71,4 +73,5 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
 ../Inc/gpio.h:
 ../Inc/screenBuffer.h:
 ../Inc/ascii_letter.h:
-../Inc/game_snake.h:
+../Inc/anim_random.h:
+../Inc/anim_name.h:
