@@ -60,8 +60,8 @@ all: main-build
 main-build: snake2c.elf secondary-outputs
 
 # Tool invocations
-snake2c.elf snake2c.map: $(OBJS) $(USER_OBJS) /home/kitty/github/defcon31-addon/STM32F030C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "snake2c.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"/home/kitty/github/defcon31-addon/STM32F030C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="snake2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+snake2c.elf snake2c.map: $(OBJS) $(USER_OBJS) C:\Users\Lam\Documents\GitHub\defcon31-addon\STM32F030C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "snake2c.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"C:\Users\Lam\Documents\GitHub\defcon31-addon\STM32F030C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="snake2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

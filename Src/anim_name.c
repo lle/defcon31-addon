@@ -12,15 +12,15 @@ void anim_name_run()
 {
 	static uint8_t index = 0;
 	uint8_t arrayLength = 10;
-	uint8_t nameArray[] = { 	ASCII_UPPER_L,
-								ASCII_UPPER_A,
-								ASCII_UPPER_M,
-								ASCII_UPPER_B,
+	uint8_t nameArray[] = { 	ASCII_UPPER_D,
 								ASCII_UPPER_E,
-								ASCII_UPPER_R,
-								ASCII_UPPER_T,
-								ASCII_SPACE,
-								ASCII_DOT,
+								ASCII_UPPER_F,
+								ASCII_UPPER_C,
+								ASCII_UPPER_O,
+								ASCII_UPPER_N,
+								ASCII_THREE,
+								ASCII_ONE,
+								ASCII_EXCLAMATION_MARK,
 								ASCII_SPACE
 	};
 
@@ -30,19 +30,19 @@ void anim_name_run()
 	if(index >= arrayLength)
 		index = 0;
 
-	HAL_Delay(250);
+	HAL_Delay(1);
 }
 
 void anim_nameKitty_run()
 {
 	static uint8_t index = 0;
 	uint8_t arrayLength = 9;
-	uint8_t nameArray[] = { 	ASCII_UPPER_K,
-								ASCII_UPPER_I,
-								ASCII_UPPER_T,
+	uint8_t nameArray[] = { 	ASCII_UPPER_R,
+								ASCII_UPPER_A,
+								ASCII_UPPER_W,
+								ASCII_UPPER_R,
+								ASCII_EXCLAMATION_MARK,
 								ASCII_SPACE,
-								ASCII_UPPER_T,
-								ASCII_UPPER_Y,
 								ASCII_CIRCUMFLEX,
 								ASCII_DOT,
 								ASCII_CIRCUMFLEX
@@ -54,6 +54,6 @@ void anim_nameKitty_run()
 	if(index >= arrayLength)
 		index = 0;
 
-	HAL_Delay(250);
+	HAL_Delay(1);
 }
 

@@ -46,6 +46,7 @@
 /* USER CODE BEGIN PD */
 
 #define MAX_ANIM_ID 7
+#define DELAY_PER_LETTER 500
 uint8_t currentAnimation = 0;
 
 /* USER CODE END PD */
@@ -123,6 +124,7 @@ int main(void)
   //start timer for screen refresh
   HAL_TIM_Base_Start_IT(&htim16);
 
+  uint32_t schedulerTimestamp_updateName = 0;
 
   /* USER CODE END 2 */
 
@@ -156,7 +158,11 @@ int main(void)
 			 anim_random_run();
 			 break;
 		 case 1:
-			 anim_name_run();
+			 if(HAL_GetTick() - schedulerTimestamp_updateName > DELAY_PER_LETTER)
+			 {
+				 schedulerTimestamp_updateName = HAL_GetTick();
+				 anim_name_run();
+			 }
 			 break;
 		 case 2:
 			 anim_horizontal_run();
@@ -168,7 +174,11 @@ int main(void)
 			 anim_diagonal_run();
 			 break;
 		 case 5:
-			 anim_nameKitty_run();
+			 if(HAL_GetTick() - schedulerTimestamp_updateName > DELAY_PER_LETTER)
+			 {
+				 schedulerTimestamp_updateName = HAL_GetTick();
+				 anim_nameKitty_run();
+			 }
 			 break;
 		 case 6:
 			 anim_swipeAll_run();
