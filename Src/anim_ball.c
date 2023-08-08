@@ -41,22 +41,13 @@ const uint64_t IMAGES[] = {
 const int IMAGES_LEN = sizeof(IMAGES)/8;
 const uint8_t REVERSE_END = 1;
 
-void display_image(uint64_t image) {
-  screen_clear();
-  for (int i = 0; i < 8; i++) {
-    uint8_t row = (image >> i * 8) & 0xFF;
-    for (int j = 0; j < 8; j++) {
-    	screen_set_bit(i, j, ((row >> j)  & 0x01));
-    }
-  }
-}
 
 void anim_ball_run()
 {
 	static int currState = 0;
 	static uint8_t dirrection = 0;
 
-		display_image(IMAGES[currState]);
+		screen_display_image(IMAGES[currState]);
 
 	if (REVERSE_END)
 	{

@@ -12,3 +12,5 @@ void screen_interruptUpdate(void);
 //GET and SET functions
 uint8_t screen_get_bit(uint8_t row, uint8_t col);
 void screen_set_bit(uint8_t row, uint8_t col, uint8_t dataBit);
+void screen_display_array(uint8_t array[8][8]);
+void screen_display_image(uint64_t image);

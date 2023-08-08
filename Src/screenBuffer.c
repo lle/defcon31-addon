@@ -102,3 +102,25 @@ void screen_draw_line(int x0, int y0, int x1, int y1) {
         if (e2 <  dy) { err += dx; y0 += sy; }
     }
 }
+
+void screen_display_array(uint8_t array[8][8])
+{
+	for(int row=0; row<8; row++)
+	{
+		for(int col=0; col<8; col++)
+		{
+				screenBuffer[row][col] = array[row][col];
+		}
+	}
+}
+
+void screen_display_image(uint64_t image)
+{
+  screen_clear();
+  for (int i = 0; i < 8; i++) {
+    uint8_t row = (image >> i * 8) & 0xFF;
+    for (int j = 0; j < 8; j++) {
+    	screen_set_bit(i, j, ((row >> j)  & 0x01));
+    }
+  }
+}
