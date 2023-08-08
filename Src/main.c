@@ -161,7 +161,7 @@ int main(void)
 			 if(HAL_GetTick() - schedulerTimestamp_updateName > DELAY_PER_LETTER)
 			 {
 				 schedulerTimestamp_updateName = HAL_GetTick();
-				 anim_name_run();
+				 anim_name_word("DEFCON31! ");
 			 }
 			 break;
 		 case 2:
@@ -177,7 +177,7 @@ int main(void)
 			 if(HAL_GetTick() - schedulerTimestamp_updateName > DELAY_PER_LETTER)
 			 {
 				 schedulerTimestamp_updateName = HAL_GetTick();
-				 anim_nameKitty_run();
+				 anim_name_word("RAWR! ^.^ ");
 			 }
 			 break;
 		 case 6:
