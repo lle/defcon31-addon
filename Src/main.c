@@ -45,7 +45,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-#define MAX_ANIM_ID 7
+#define MAX_ANIM_ID 8
 #define DELAY_PER_LETTER 500
 uint8_t currentAnimation = 0;
 
@@ -156,6 +156,7 @@ int main(void)
 	{
 		 case 0:
 			 anim_random_run();
+
 			 break;
 		 case 1:
 			 if(HAL_GetTick() - schedulerTimestamp_updateName > DELAY_PER_LETTER)
@@ -181,6 +182,9 @@ int main(void)
 			 }
 			 break;
 		 case 6:
+			 anim_rotate_run();
+			 break;
+		 case 7:
 			 anim_swipeAll_run();
 			 break;
 		 default:

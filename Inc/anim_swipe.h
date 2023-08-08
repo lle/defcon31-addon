@@ -12,5 +12,6 @@ void anim_vertical_run(void);
 void anim_horizontal_run(void);
 void anim_diagonal_run(void);
 void anim_swipeAll_run(void);
+void anim_rotate_run();
 
 #endif /* ANIM_VERTICAL_H_ */
