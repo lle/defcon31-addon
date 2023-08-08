@@ -4,6 +4,7 @@
 void screen_show_letter(uint8_t ascii_id);
 void screen_fill(void);
 void screen_clear(void);
+void screen_draw_line(int x0, int y0, int x1, int y1);
 
 //Interrupt Handler
 void screen_interruptUpdate(void);
