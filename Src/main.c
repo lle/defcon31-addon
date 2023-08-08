@@ -33,6 +33,8 @@
 #include "anim_random.h"
 #include "anim_swipe.h"
 #include "anim_name.h"
+#include "anim_ball.h"
+#include "anim_life.h"
 
 
 /* USER CODE END Includes */
@@ -45,7 +47,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-#define MAX_ANIM_ID 9
+#define MAX_ANIM_ID 10
 #define DELAY_PER_LETTER 500
 uint8_t currentAnimation = 0;
 
@@ -126,6 +128,9 @@ int main(void)
 
   uint32_t schedulerTimestamp_updateName = 0;
 
+  // Initiate matrix for conway
+  anim_life_setup();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -146,7 +151,7 @@ int main(void)
 		//HAL_Delay(100);
 		while(HAL_GPIO_ReadPin(BTB_GPIO_Port, BTB_Pin) == GPIO_PIN_RESET)
 		{
-			screen_show_letter(ASCII_ONE + currentAnimation);
+			screen_show_letter((currentAnimation < 9)?(ASCII_ONE + currentAnimation):(ASCII_LOWER_A + currentAnimation - 9));
 			HAL_Delay(100);
 		}
 	}
@@ -188,6 +193,10 @@ int main(void)
 			 break;
 		 case 8:
 			 anim_ball_run();
+			 break;
+		 case 9:
+			 anim_life_run();
+			 break;
 		 default:
 			 screen_fill(); HAL_Delay(10);
 			 screen_clear(); HAL_Delay(10);
