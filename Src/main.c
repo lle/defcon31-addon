@@ -45,7 +45,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-#define MAX_ANIM_ID 8
+#define MAX_ANIM_ID 9
 #define DELAY_PER_LETTER 500
 uint8_t currentAnimation = 0;
 
@@ -156,7 +156,6 @@ int main(void)
 	{
 		 case 0:
 			 anim_random_run();
-
 			 break;
 		 case 1:
 			 if(HAL_GetTick() - schedulerTimestamp_updateName > DELAY_PER_LETTER)
@@ -175,18 +174,20 @@ int main(void)
 			 anim_diagonal_run();
 			 break;
 		 case 5:
+			 anim_rotate_run();
+			 break;
+		 case 6:
 			 if(HAL_GetTick() - schedulerTimestamp_updateName > DELAY_PER_LETTER)
 			 {
 				 schedulerTimestamp_updateName = HAL_GetTick();
 				 anim_name_word("RAWR! ^.^ ");
 			 }
 			 break;
-		 case 6:
-			 anim_rotate_run();
-			 break;
 		 case 7:
 			 anim_swipeAll_run();
 			 break;
+		 case 8:
+			 anim_ball_run();
 		 default:
 			 screen_fill(); HAL_Delay(10);
 			 screen_clear(); HAL_Delay(10);
