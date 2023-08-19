@@ -1,4 +1,4 @@
-# LAMBERT'S DEFCON31 BADGE-ADDON
+# DEFCON31 BLINKY BADGE-ADDON
 This project recycles the same schematic and foundation code from my Snake Business Card. The main difference is that there is only a single button on the PCB that the user can interact with. In the development of this project, STM32 CubeMX and CubeIDE were used to configure and generate the HAL (hardware-abstraction-layer). Some says I'm cheating and using a code generator. I don't disagree XD.
 
 To edit/compile/flash the code you only need to install CubeIDE. Although feel free to use any tools you like. 
@@ -40,4 +40,4 @@ Additionally, there are helper functions to make animating easier:
 	* screen_clear()
 
 ### ASCII Letters
-In screenBuffer there is a helper function "screen_show_letter()". It loads the data from a look-up-table "ascii_letter.h" from an array of 8x8 font.
+In screenBuffer there is a helper function "screen_show_letter()". It loads the data from a look-up-table "ascii_letter.h" from an array of 8x8 font. 
