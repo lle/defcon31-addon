@@ -8,8 +8,7 @@
 #ifndef ANIM_NAME_H_
 #define ANIM_NAME_H_
 
-void anim_name_run(void);
-void anim_nameKitty_run(void);
+void anim_name_word(char* name);
 
 
 #endif /* ANIM_NAME_H_ */
