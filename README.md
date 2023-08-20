@@ -6,9 +6,9 @@ You can download CubeIDE here: https://www.st.com/en/development-tools/stm32cube
 
 ## Code and Game Behavior
 The badge-addon is loaded with a set of animation. The animation is selected in the main loop in "main.c". There is a switch statement that cycles between each animation. When the button is pressed, the animation is incremented to select a new one. Each animation is described in a specific .c/.h file
-	* anim_name.c 
-	* anim_random.c
-	* anim_swipe.c
+* anim_name.c 
+* anim_random.c
+* anim_swipe.c
 
 You can add additional animation by adding a new .c/.h pair. Add an #include in main.c and call the your animation function in the switch statement.
 
@@ -30,14 +30,21 @@ The low-level function which controls the individual LEDs is located in "ledHand
 
 ## About screenBuffer.c
 The screenBuffer is how you interact with the LED matrix. There is 1 main fundamental fonction you need:
-	* screen_set_bit(row, column, state)
+* screen_set_bit(row, column, state)
 
 This is function set the state of each LEDs in the 8x8 matrix. It's either 1 (on) or 0 (off).
 
 Additionally, there are helper functions to make animating easier:
-	* screen_get_bit()
-	* screen_fill()	
-	* screen_clear()
+* screen_get_bit()
+* screen_fill()	
+* screen_clear()
 
-### ASCII Letters
-In screenBuffer there is a helper function "screen_show_letter()". It loads the data from a look-up-table "ascii_letter.h" from an array of 8x8 font. 
+## How to Flash
+Things you need:
+* ST-Link - I personally use an STM32F0 Nucleo Board: [497-15096-ND](https://www.digikey.ca/en/products/detail/stmicroelectronics/NUCLEO-F072RB/5047984)
+* Female Connector: [H2193-ND](https://www.digikey.ca/en/products/detail/hirose-electric-co-ltd/DF13-4P-1-25DSA/241767?s=N4IgTCBcDaIBJgIwE4DMBaAcgERAXQF8g)
+* Male Connector: [H2181-ND](https://www.digikey.ca/en/products/detail/hirose-electric-co-ltd/DF13-4S-1-25C/241750)
+* Precrimped wires x4: [H4BXG-10112-B8-ND](https://www.digikey.ca/en/products/detail/hirose-electric-co-ltd/H4BXG-10112-B8/426117)
+
+### Instruction
+< TO DO >
