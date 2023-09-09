@@ -72,3 +72,5 @@ Download verified successfully
 Shutting down...
 Exit.
 ```
+* You might have to power cycle the PCB to get the firmware started the first time
+* Congrats, you have flashed the addon. Happy coding.
