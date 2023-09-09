@@ -47,4 +47,28 @@ Things you need:
 * Precrimped wires x4: [H4BXG-10112-B8-ND](https://www.digikey.ca/en/products/detail/hirose-electric-co-ltd/H4BXG-10112-B8/426117)
 
 ### Instruction
-< TO DO >
+* Connect the ST-Link SWD header to the PCB's programming port
+![connection](img/stLink.jpg)
+
+* Compile the code in STM CubeIDE: "Project"->"Build All"
+* Connect your Nucleo board to your computer
+* Configure the debugger as follows: "Run" -> "Debug Configurations"
+![connection](img/debugConfig.png)
+* Flash the firmware: "Run" -> "Run"
+* You will see this in the logs
+```
+Memory Programming ...
+Opening and parsing file: ST-LINK_GDB_server_a15460.srec
+  File          : ST-LINK_GDB_server_a15460.srec
+  Size          : 21.34 KB 
+  Address       : 0x08000000 
+Erasing memory corresponding to segment 0:
+Erasing internal memory sectors [0 21]
+Download in Progress:
+File download complete
+Time elapsed during download operation: 00:00:01.454
+Verifying ...
+Download verified successfully 
+Shutting down...
+Exit.
+```
